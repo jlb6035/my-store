@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { cart } from '../models/cart';
 import { Product } from '../models/product';
+import { CartService } from '../services/cart.service';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -13,13 +15,27 @@ export class ProductDetailComponent implements OnInit {
   productId: any = "";
   product: Product;
 
-  constructor(route: ActivatedRoute, private productService: ProductService) {
+  cart: cart;
+
+  quantities: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+
+  constructor(route: ActivatedRoute, private productService: ProductService, private cartService: CartService) {
     this.product = {
       id: 1,
       name: 'name',
       price: 1,
       url: "url",
       description: ""
+    }
+
+    this.cart = {
+      id: 1,
+      name: 'name',
+      price: 1,
+      url: "url",
+      description: "",
+      quantity: 1
     }
 
     route.paramMap.subscribe(params => {
@@ -35,6 +51,21 @@ export class ProductDetailComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(quantity: number, product: Product){
+    console.log("Form Submission!!!!");
+    console.log("Quantity:  " + quantity);
+    this.cart = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      url: product.url,
+      description: product.description,
+      quantity: quantity
+    }
+    this.cartService.addToCart(this.cart)
+    alert(product.name + " added to cart!");
   }
 
 }

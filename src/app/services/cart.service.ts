@@ -8,10 +8,8 @@ import { Product } from '../models/product';
 export class CartService {
 
   cart: cart[] = [];
-  total: number;
 
   constructor() {
-    this.total = 1;
    }
 
   addToCart(cart: cart){
@@ -26,10 +24,22 @@ export class CartService {
     return this.cart = this.cart.filter(item => item.id != cartItem.id);
   }
 
-    getTotal(){
-    this.cart.forEach(p => {
-      this.total += p.quantity * p.price
+  getTotal(): number {
+    let total = 0;
+    this.cart.forEach(p => total += p.quantity * p.price);
+    return total;
+  }
+
+  updateQuantity(item: cart, newQuantity: number){
+    this.cart.forEach(i =>{
+      if(i.id == item.id){
+        console.log("ID: " + i.id + " " + item.id)
+        console.log("Quantity "+i.quantity + " " + item.quantity)
+        i.quantity = newQuantity;
+        console.log("Quantiy "+ i.quantity + " " + item.quantity)
+        console.log("Update quantity");
+      }
     })
-    return this.total;
+    return this.getTotal();
   }
 }

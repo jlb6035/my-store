@@ -23,7 +23,11 @@ export class CartComponent implements OnInit {
   removeProduct(cartItem: cart){
     this.shoppingCart = this.cartService.removeProduct(cartItem);
     this.total = this.cartService.getTotal();
-    console.log(this.shoppingCart);
-    console.log(this.total);
+    //return this.total;
+  }
+
+  updateQuantity(item: cart, event: any){
+    let newQuantity = event.target.value;
+    this.total = this.cartService.updateQuantity(item, newQuantity);
   }
 }
