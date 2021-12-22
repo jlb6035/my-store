@@ -1,0 +1,16 @@
+<div class="cart-container" *ngFor="let item of shoppingCart">
+    <div class="cart-item">
+        <div>
+            <img src="{{ item.url }}">
+        </div>
+        <div class="cart-item-details">
+            <h2>{{ item.name }}</h2>
+            <p>${{ item.price }}</p>
+            <p>Amount: <input class="number-input" type="number" min="1" value="{{ item.quantity }}"></p>
+            <button (click)="removeProduct(item)">Remove Item</button>
+        </div>
+    </div>
+</div>
+<div class="total">
+    Total ${{ total }}
+</div>

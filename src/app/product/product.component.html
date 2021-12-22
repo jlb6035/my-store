@@ -1,0 +1,17 @@
+<div class="product-container">
+    <a routerLink="/product/{{product.id}}">
+    <img class="product-image" src="{{product.url}}">
+    </a>
+    <p><b>{{ product.name }}</b></p>
+    <p> ${{product.price }} </p>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f.value.quantity, product)">
+        <select name="quantity" ngModel>
+          <option value="" disabled>Choose a quantity</option>
+          <option *ngFor="let quantity of quantities" [ngValue]="quantity">
+            {{ quantity }}
+          </option>
+        </select>
+        <br>
+        <input type="submit" value="Add to cart">
+      </form>
+</div>
