@@ -13,24 +13,17 @@ export class CartComponent implements OnInit {
   total: number;
 
   constructor(private cartService: CartService) {
-    this.total = 0;
+    this.total = cartService.getTotal();
     this.shoppingCart = cartService.getCart()
    }
 
   ngOnInit(): void {
-    this.getTotal(this.shoppingCart);
-  }
-
-  getTotal(shoppingCart: cart[]){
-    this.shoppingCart.forEach(p => {
-      this.total += p.quantity * p.price
-    })
   }
 
   removeProduct(cartItem: cart){
     this.shoppingCart = this.cartService.removeProduct(cartItem);
+    this.total = this.cartService.getTotal();
     console.log(this.shoppingCart);
-    this.getTotal(this.shoppingCart);
     console.log(this.total);
   }
 }

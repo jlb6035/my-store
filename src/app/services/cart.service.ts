@@ -8,8 +8,11 @@ import { Product } from '../models/product';
 export class CartService {
 
   cart: cart[] = [];
+  total: number;
 
-  constructor() { }
+  constructor() {
+    this.total = 1;
+   }
 
   addToCart(cart: cart){
     this.cart.push(cart);
@@ -21,5 +24,12 @@ export class CartService {
 
   removeProduct(cartItem: cart){
     return this.cart = this.cart.filter(item => item.id != cartItem.id);
+  }
+
+    getTotal(){
+    this.cart.forEach(p => {
+      this.total += p.quantity * p.price
+    })
+    return this.total;
   }
 }
