@@ -1,0 +1,12 @@
+<div class="form-margin">
+    <form #form="ngForm" (ngSubmit)="submitForm()">
+        <label>Full Name:</label><br>
+        <input type="text" required [(ngModel)]="name"><br>
+        <label>Address:</label><br>
+        <input type="text" required [(ngModel)]="address"><br>
+        <label>Credit Card Number:</label><br>
+        <input type="number" required minlength="16" maxlength="16" [(ngModel)]="creditCard">
+        <br>
+        <input type="submit" [disabled]="form.invalid" value="Submit">
+    </form>
+</div>

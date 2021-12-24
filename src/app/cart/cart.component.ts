@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { cart } from '../models/cart';
-import { CartService } from '../services/cart.service';
+import { CartService } from '../services/cart/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -30,4 +30,5 @@ export class CartComponent implements OnInit {
     let newQuantity = event.target.value;
     this.total = this.cartService.updateQuantity(item, newQuantity);
   }
+
 }

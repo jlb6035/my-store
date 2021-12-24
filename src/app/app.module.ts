@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { CartComponent } from './cart/cart.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { CheckoutFormComponent } from './checkout-form/checkout-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     ProductComponent,
     ProductDetailComponent,
     CartComponent,
-    NavBarComponent
+    NavBarComponent,
+    CheckoutFormComponent
   ],
   imports: [
     BrowserModule,

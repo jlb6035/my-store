@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { cart } from '../models/cart';
 import { Product } from '../models/product';
-import { CartService } from '../services/cart.service';
+import { CartService } from '../services/cart/cart.service';
 
 @Component({
   selector: 'app-product',
