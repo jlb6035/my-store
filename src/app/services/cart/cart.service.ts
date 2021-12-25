@@ -42,4 +42,8 @@ export class CartService {
     })
     return this.getTotal();
   }
+
+  clearCart(){
+    this.cart = [];
+  }
 }

@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CartComponent } from './cart/cart.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CheckoutFormComponent } from './checkout-form/checkout-form.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CheckoutFormComponent } from './checkout-form/checkout-form.component';
     ProductDetailComponent,
     CartComponent,
     NavBarComponent,
-    CheckoutFormComponent
+    CheckoutFormComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,
