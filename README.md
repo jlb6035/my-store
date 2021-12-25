@@ -1,4 +1,5 @@
 # MyStore
+This project is an eCommerce store. The purpose of this project is to demonstrate fundamental knowledge of Angular.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
 
