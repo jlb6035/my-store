@@ -19,8 +19,5 @@ export class CheckoutFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submitForm(){
-    
-  }
 
 }

@@ -33,11 +33,7 @@ export class CartService {
   updateQuantity(item: cart, newQuantity: number){
     this.cart.forEach(i =>{
       if(i.id == item.id){
-        console.log("ID: " + i.id + " " + item.id)
-        console.log("Quantity "+i.quantity + " " + item.quantity)
         i.quantity = newQuantity;
-        console.log("Quantiy "+ i.quantity + " " + item.quantity)
-        console.log("Update quantity");
       }
     })
     return this.getTotal();

@@ -40,8 +40,6 @@ export class ProductComponent implements OnInit {
   }
 
   onSubmit(quantity: number, product: Product){
-    console.log("Form Submission!!!!");
-    console.log("Quantity:  " + quantity);
     this.cart = {
       id: product.id,
       name: product.name,
