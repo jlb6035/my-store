@@ -1,5 +1,6 @@
 # MyStore
-This project is an eCommerce store. The purpose of this project is to demonstrate fundamental knowledge of Angular.
+This project is a SPA built in Angular. The application allows users to view a list of products, add or remove products from your cart, displays a total, and gives confirmation on the order.
+![Image of Products](../assets/myStore.jpg)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
 
