@@ -19,5 +19,7 @@ export class CheckoutFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  onNameChange(name: any){
+    console.log(name);
+  }
 }

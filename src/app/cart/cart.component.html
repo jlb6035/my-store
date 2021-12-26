@@ -2,17 +2,7 @@
     <div class="row">
         <div class="column-6">
             <div class="cart-container" *ngFor="let item of shoppingCart">
-                <div class="cart-item">
-                    <div>
-                        <img src="{{ item.url }}">
-                    </div>
-                    <div class="cart-item-details">
-                        <h2>{{ item.name }}</h2>
-                        <p>${{ item.price }}</p>
-                        <p>Amount: <input class="number-input" type="number" min="1" value="{{ item.quantity }}" (change)="updateQuantity(item, $event)" ></p>
-                        <button (click)="removeProduct(item)" class="btn btn-primary">Remove Item</button>
-                    </div>
-                </div>
+                <app-cart-item [item]="item" (removeItem)="removeProduct($event)" (updateQuantity)="updateQuantity($event)"></app-cart-item>
             </div>
         </div>
         <div class="column-6">

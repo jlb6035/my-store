@@ -26,8 +26,8 @@ export class CartComponent implements OnInit {
     //return this.total;
   }
 
-  updateQuantity(item: cart, event: any){
-    let newQuantity = event.target.value;
+  updateQuantity(item: cart){
+    let newQuantity = item.quantity;
     this.total = this.cartService.updateQuantity(item, newQuantity);
   }
 

@@ -2,7 +2,7 @@
     <form #form="ngForm">
       <div class="form-group">
         <label>Full Name:</label>
-        <input name="name" type="text" required minlength="3" [(ngModel)]="name" #custName="ngModel" class="form-control">
+        <input name="name" (ngModelChange)="onNameChange($event)" type="text" required minlength="3" [(ngModel)]="name" #custName="ngModel" class="form-control">
       </div>
       <div class="form-group">
         <label>Address:</label>

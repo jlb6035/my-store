@@ -14,3 +14,5 @@
 [1225/190031.561:ERROR:registration_protocol_win.cc(102)] CreateFile: The system cannot find the file specified. (0x2)
 [1225/190419.423:ERROR:registration_protocol_win.cc(102)] CreateFile: The system cannot find the file specified. (0x2)
 [1225/190420.063:ERROR:registration_protocol_win.cc(102)] CreateFile: The system cannot find the file specified. (0x2)
+[1225/202019.413:ERROR:registration_protocol_win.cc(102)] CreateFile: The system cannot find the file specified. (0x2)
+[1225/202020.744:ERROR:registration_protocol_win.cc(102)] CreateFile: The system cannot find the file specified. (0x2)
