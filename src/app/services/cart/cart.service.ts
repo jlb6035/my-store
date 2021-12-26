@@ -13,7 +13,17 @@ export class CartService {
    }
 
   addToCart(cart: cart){
-    this.cart.push(cart);
+    if(this.doesItemExsist(cart)){
+      this.updateQuantity(cart, cart.quantity);
+      alert("Quantity for " + cart.name + " updated!")
+    } else {
+      if(cart.quantity > 1){
+        this.cart.push(cart);
+        alert(cart.name + " added to cart!");
+      } else {
+        alert("Please select a quantity!");
+      }
+    }
   }
 
   getCart(){
@@ -37,6 +47,14 @@ export class CartService {
       }
     })
     return this.getTotal();
+  }
+
+  doesItemExsist(cart: cart){
+    if(this.cart.filter(item => item.id === cart.id ).length > 0){
+      return true;
+    } else {
+      return false;
+    }
   }
 
   clearCart(){
