@@ -1,0 +1,1 @@
+aws cp --recursive --acl public-read ./dist s3://storefront-frontend/

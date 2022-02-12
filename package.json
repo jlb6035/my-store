@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy":  "aws s3 cp --recursive --acl public-read ./dist/my-store s3://storefront-frontend/"
   },
   "private": true,
   "dependencies": {

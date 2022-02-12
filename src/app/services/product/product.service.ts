@@ -11,6 +11,6 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getAllProducts(): Observable<Product[]>{
-    return this.http.get<Product[]>('http://localhost:4200/assets/data.json');
+    return this.http.get<Product[]>('http://storefrontbackendapi-env.eba-c6umk7tn.us-east-1.elasticbeanstalk.com/products');
   }
 }
